@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/SoulDancer27"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A simple template for a custom React component library",
   "scripts": {
     "rollup": "rollup -c",
@@ -27,6 +27,7 @@
     "@storybook/react": "^7.0.22",
     "@storybook/react-webpack5": "^7.0.22",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/file-saver": "^2.0.5",
     "@types/react": "^18.2.13",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -43,14 +44,14 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
-    "react": "^18.2.0",
-    "js-abbreviation-number": "^1.4.0"
+    "file-saver": "^2.0.5",
+    "js-abbreviation-number": "^1.4.0",
+    "react": "^18.2.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "dependencies": {}
+  "types": "dist/index.d.ts"
 }

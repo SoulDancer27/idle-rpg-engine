@@ -9,7 +9,7 @@ export type SettingsContextType = {
   notation: "exponential" | "trivial";
 };
 
-export const settingsContext: SettingsContextType = {
+export const settingsContextDefault: SettingsContextType = {
   tickRate: 1000 / defaultUpdateInterval,
   gameSpeed: 1,
   notation: "trivial",
@@ -17,7 +17,7 @@ export const settingsContext: SettingsContextType = {
 
 /** Context initializator */
 export const SettingsContext = React.createContext({
-  ...settingsContext,
+  ...settingsContextDefault,
   updateContext: (newData: Partial<SettingsContextType>) => {},
   setContext: (value: React.SetStateAction<SettingsContextType>) => {},
 });

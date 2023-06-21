@@ -5,11 +5,17 @@ type ContextManagerProps = {
   storageItemName: string;
 };
 
+type ManagementFunctions<C> = {
+  updateContext: (data: Partial<C>) => void;
+  setContext: (data: React.SetStateAction<C>) => void;
+};
+
 export default function withContextManager<C>(
   WrappedComponent: React.FunctionComponent,
+  Context: React.Context<C & ManagementFunctions<C>>,
   defaultContextValue: C
 ) {
-  return (props: ContextManagerProps) => {
+  return (props: ContextManagerProps & { children: any }) => {
     const [context, setContext] = React.useState(defaultContextValue);
     /** Updates player context using shallow merge of UserContext attributes. */
     const updateContext = (newData: Partial<C>) =>
@@ -37,7 +43,6 @@ export default function withContextManager<C>(
       };
     }, []);
 
-    const Context = React.createContext({ ...defaultContextValue });
     return (
       <Context.Provider value={{ ...context, updateContext, setContext }}>
         {loaded && <WrappedComponent />}

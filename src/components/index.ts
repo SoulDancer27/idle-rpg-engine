@@ -1,5 +1,4 @@
-import Button from "./Button/Button";
-import { ButtonProps } from "./Button/Button";
+import ProgressBar from "./ProgressBar/ProgressBar";
 import { useContentSelector, withTooltip } from "./shared";
 
-export { Button, ButtonProps, useContentSelector, withTooltip };
+export { ProgressBar, useContentSelector, withTooltip };

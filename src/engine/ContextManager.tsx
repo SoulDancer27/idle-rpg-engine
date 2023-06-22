@@ -1,24 +1,7 @@
 import React from "react";
 import { defaultAutosaveInterval } from "./constants";
 import { accessCookie, createCookie } from "../utils";
-
-export type ContextManagerProps<C> = {
-  Context: React.Context<C & ManagementFunctions<C>>;
-  defaultContextValue: C;
-  localStorageName?: string;
-  cookies?: Array<{
-    key: string;
-    cookieName: string;
-    type?: "number" | "string";
-  }>;
-  autosaveInterval?: number;
-  children?: any;
-};
-
-type ManagementFunctions<C> = {
-  updateContext: (data: Partial<C>) => void;
-  setContext: (data: React.SetStateAction<C>) => void;
-};
+import { ContextManagerProps } from "../Interfaces";
 
 export default function ContextManager<C>(props: ContextManagerProps<C>) {
   const {

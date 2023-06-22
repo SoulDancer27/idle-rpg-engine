@@ -1,28 +1,8 @@
 import React from "react";
 import ContextManager from "./ContextManager";
+import { DataManagerProps } from "../Interfaces";
 
-export type DataManagerProps<C> = {
-  Context: React.Context<C & ManagementFunctions<C>>;
-  defaultContextValue: C;
-  localStorageName?: string;
-  cookies?: Array<{
-    key: string;
-    cookieName: string;
-    type?: "number" | "string";
-  }>;
-  autosaveInterval?: number;
-  children?: any;
-};
-
-type ManagementFunctions<C> = {
-  updateContext: (data: Partial<C>) => void;
-  setContext: (data: React.SetStateAction<C>) => void;
-};
-
-export default function DataManager(props: {
-  data: Array<DataManagerProps<any>>;
-  children?: any;
-}) {
+export default function DataManager<C>(props: DataManagerProps<C>) {
   const { data } = props;
   const lastIndex = data.length - 1;
   let childElement = props.children;

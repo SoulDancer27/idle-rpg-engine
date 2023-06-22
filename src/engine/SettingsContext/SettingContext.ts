@@ -1,13 +1,9 @@
 import React from "react";
 import { trivialNumber, exponentialNumber } from "../../utils";
 import { defaultUpdateInterval } from "../constants";
+import { SettingsContextType } from "../../Interfaces";
 
 // Declarations for the React Context type
-export type SettingsContextType = {
-  tickRate: number;
-  gameSpeed: number;
-  notation: "exponential" | "trivial";
-};
 
 export const settingsContextDefault: SettingsContextType = {
   tickRate: 1000 / defaultUpdateInterval,

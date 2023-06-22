@@ -3,6 +3,7 @@ import { trivialNumber, exponentialNumber } from "./parseNumber";
 import { createCookie, accessCookie } from "./Cookie";
 import parseTime from "./parseTime";
 import useWindowDimensions from "./useWindowDimensions";
+import { fileToGameData, localStorageToFile } from "./fileManagement";
 
 export {
   getSpacing,
@@ -12,4 +13,6 @@ export {
   accessCookie,
   parseTime,
   useWindowDimensions,
+  fileToGameData,
+  localStorageToFile,
 };
